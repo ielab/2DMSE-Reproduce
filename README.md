@@ -155,31 +155,31 @@ Notes:
 
 -----
 
-### For Averaged BEIR dataset Retrieval Task using NDCG@10
+- ### For Averaged BEIR dataset Retrieval Task using NDCG@10
 
 <div style="width: 48%; text-align: left;">
   <img src="plots/layer_subplots_beir_ndcg@10.png" alt="plot_retrieval_beir" style="width: 100%;">
 </div>
 
-### For MSMARCO Passage Retrieval Task using MRR@10
+- ### For MSMARCO Passage Retrieval Task using MRR@10
 
 <div style="width: 48%; text-align: left;">
   <img src="plots/layer_subplots_mrr10.png" alt="plot_retrieval_msmarco" style="width: 100%;">
 </div>
 
-### For investigation of the effectiveness of different loss functions
+- ### For investigation of the effectiveness of different loss functions
 
 <div style="width: 48%; text-align: left;">
   <img src="plots/layer_subplots_mrr10_ablation.png" alt="plot_retrieval_loss" style="width: 100%;">
 </div>
 
-### For investigation of the effectiveness of different DIMS combinations
+- ### For investigation of the effectiveness of different DIMS combinations
 
 <div style="width: 48%; text-align: left;">
   <img src="plots/layer_subplots_mrr10_ablation_2.png" alt="plot_retrieval_loss_2" style="width: 100%;">
 </div>
 
-### For investigation of fixed document encoding vs. Paired document encoding (Original 2DMSE)
+- ### For investigation of fixed document encoding vs. Paired document encoding (Original 2DMSE)
 
 <div style="width: 48%; text-align: left;">
   <img src="plots/layer_subplots_mrr10_ablation_3.png" alt="plot_retrieval_loss_3" style="width: 100%;">
