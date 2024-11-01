@@ -14,7 +14,7 @@ Reproduction code of 2DMSE
 
 ### Training Hyperparameters for STS Reproduction
 
-#### For V1
+- #### For V1
 
 | Hyperparameter                  | Value                      |
 |---------------------------------|----------------------------|
@@ -41,10 +41,7 @@ Notes:
 
 -----
 
-#### For V2:
-
-
-### Training Hyperparameters for STS Reproduction
+- #### For V2:
 
 | Hyperparameter                  | Value                      |
 |---------------------------------|----------------------------|
