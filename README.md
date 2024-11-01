@@ -7,16 +7,81 @@ Reproduction code of 2DMSE
 
 
 
+-----
+
 ## For STS (Semantic Textual Similarity) Reproduction
 
 
-### Training Hyperparameters
+### Training Hyperparameters for STS Reproduction
+
+#### For V1
+
+| Hyperparameter                  | Value                      |
+|---------------------------------|----------------------------|
+| Model Name                      | `bert-base-uncased` |
+| Batch Size                      | 128                        |
+| Gradient Accumulation Steps     | 128                        |
+| Number of Training Epochs       | 10                         |
+| Learning Rate Warmup Steps      | 50                         |
+| Sequence Length Limit           | No Limit Set (default)     |
+| Optimizer                       | `AdamW` (default in Trainer) |
+| Mixed Precision Training (FP16) | Enabled (`True`)           |
+| BF16 Training                   | Disabled (`False`)         |
+| Gradient Checkpointing          | Enabled (`True`)           |
+| Save Strategy                   | `steps`                    |
+| Save Total Limit                | 2 checkpoints              |
+| Random Seed                     | 42                         |
+| Loss Function                   | `Matryoshka2dLoss`         |
+
+
+Notes:
+
+- The model uses **MultipleNegativesRankingLoss** wrapped inside **Matryoshka2dLoss**, with dimensions [768, 512, 256, 128, 64, 32, 16, 8], to train the model across different representation sizes.
+- `SentenceTransformerTrainer` is utilized for the training process, which allows for easy model training and evaluation integration.
+
+-----
+
+#### For V2:
+
+
+### Training Hyperparameters for STS Reproduction
+
+| Hyperparameter                  | Value                      |
+|---------------------------------|----------------------------|
+| Model Name                      | `bert-base-uncased`  |
+| Batch Size                      | 128                        |
+| Gradient Accumulation Steps     | 128                        |
+| Number of Training Epochs       | 10                         |
+| Learning Rate Warmup Steps      | 50                         |
+| Sequence Length Limit           | No Limit Set (default)     |
+| Optimizer                       | `AdamW` (default in Trainer) |
+| Mixed Precision Training (FP16) | Enabled (`True`)           |
+| BF16 Training                   | Disabled (`False`)         |
+| Gradient Checkpointing          | Enabled (`True`)           |
+| Output Directory                | `${model_name}/2d`         |
+| Save Strategy                   | `steps`                    |
+| Random Seed                     | 42                         |
+| Loss Function                   | `Matryoshka2dLoss`         |
+| Pooling Strategy                | `cls`                      |
+| Maximum Sequence Length         | 128                        |
+| Tokenizer Name                  | `bert-base-uncased`        |
+| Learning Rate                   | 5e-5                       |
+| Logging Steps                   | 100                        |
+| Save Steps                      | 200                        |
+| Warmup Steps                    | 50                         |
+| Workers                         | 128                        |
+| Epochs                          | 10                         |
+| IBN Weight                      | 30.0                       |
+| Cosine Weight                   | 0.0                        |
+| Apply ESE                       | Enabled (`1`)              |
+| ESE KL Temperature              | 1.0                        |
+| ESE Compression Size            | 128                        |
+| Angle Weight                    | 1.0                        |
+| Angle Tau                       | 20.0                       |
 
 
 
-
-
-
+-----
 ### Full Result for STS Reproduction
 
 | Layer | Method  | V1 (8) | V1 (16) | V1 (32) | V1 (64) | V1 (128) | V1 (256) | V1 (512) | V1 (768) | V2 (8) | V2 (16) | V2 (32) | V2 (64) | V2 (128) | V2 (256) | V2 (512) | V2 (768) |
@@ -49,13 +114,46 @@ Reproduction code of 2DMSE
 
 *Note*: Results are reported in Pearson correlation coefficient using averaged STS datasets. The best performance in each layer setup is highlighted in **bold**.
 
-
+-----
 
 
 ## For Retrieval Task:
 
 ### Training Hyperparameters
 
+
+| Hyperparameter                  | Value                      |
+|---------------------------------|----------------------------|
+| Model Name                      | `bert-base-uncased`        |
+| Dataset Name                    | `Tevatron/msmarco-passage` |
+| Pooling Strategy                | `cls`                      |
+| Gradient Checkpointing          | Enabled (`True`)           |
+| Save Steps                      | 10000                      |
+| Learning Rate                   | 1e-4                       |
+| Per Device Train Batch Size     | 128                        |
+| Train Group Size                | 8                          |
+| Query Max Length                | 32                         |
+| Passage Max Length              | 196                        |
+| Number of Training Epochs       | 3                          |
+| Target Embedding Dimension      | 128                        |
+| Logging Steps                   | 10                         |
+| Overwrite Output Directory      | Enabled (`True`)           |
+| Reporting Tool                  | `wandb`                    |
+| GPU Used                        | `h100`                     |
+| Nodes                           | 1                          |
+| CPUs Per Task                   | 10                         |
+| Memory Per CPU                  | 100G                       |
+| Job Name                        | `TREC_RAG`                 |
+| GPU Partition                   | `gpu_cuda`                 |
+| Account                         | `a_ielab`                  |
+| Time Limit                      | `100:00:00`                |
+| Score Alignment                 | Passed as Argument         |
+| Compare to Last Layer           | Passed as Argument         |
+| Passage to Last Layer           | Passed as Argument         |
+| Sub Layer Full Dimension        | Passed as Argument         |
+
+
+-----
 
 ### For Averaged BEIR dataset Retrieval Task using NDCG@10
 
