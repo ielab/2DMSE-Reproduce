@@ -16,22 +16,22 @@ Reproduction code of 2DMSE
 
 - #### For V1
 
-| Hyperparameter                  | Value                      |
-|---------------------------------|----------------------------|
-| Model Name                      | `bert-base-uncased` |
-| Batch Size                      | 128                        |
-| Gradient Accumulation Steps     | 128                        |
-| Number of Training Epochs       | 10                         |
-| Learning Rate Warmup Steps      | 50                         |
-| Sequence Length Limit           | No Limit Set (default)     |
+| Hyperparameter                  | Value                        |
+|---------------------------------|------------------------------|
+| Model Name                      | `bert-base-uncased`          |
+| Batch Size                      | 128                          |
+| Gradient Accumulation Steps     | 128                          |
+| Number of Training Epochs       | 10                           |
+| Learning Rate Warmup Steps      | 50                           |
+| Sequence Length Limit           | No Limit Set (default)       |
 | Optimizer                       | `AdamW` (default in Trainer) |
-| Mixed Precision Training (FP16) | Enabled (`True`)           |
-| BF16 Training                   | Disabled (`False`)         |
-| Gradient Checkpointing          | Enabled (`True`)           |
-| Save Strategy                   | `steps`                    |
-| Save Total Limit                | 2 checkpoints              |
-| Random Seed                     | 42                         |
-| Loss Function                   | `Matryoshka2dLoss`         |
+| Mixed Precision Training (FP16) | Enabled (`True`)             |
+| BF16 Training                   | Disabled (`False`)           |
+| Gradient Checkpointing          | Enabled (`True`)             |
+| Save Strategy                   | `steps`                      |
+| Save Total Limit                | 2 checkpoints                |
+| Random Seed                     | 42                           |
+| Loss Function                   | `Matryoshka2dLoss`           |
 
 
 Notes:
@@ -43,38 +43,38 @@ Notes:
 
 - #### For V2:
 
-| Hyperparameter                  | Value                      |
-|---------------------------------|----------------------------|
-| Model Name                      | `bert-base-uncased`  |
-| Batch Size                      | 128                        |
-| Gradient Accumulation Steps     | 128                        |
-| Number of Training Epochs       | 10                         |
-| Learning Rate Warmup Steps      | 50                         |
-| Sequence Length Limit           | No Limit Set (default)     |
+| Hyperparameter                  | Value                        |
+|---------------------------------|------------------------------|
+| Model Name                      | `bert-base-uncased`          |
+| Batch Size                      | 128                          |
+| Gradient Accumulation Steps     | 128                          |
+| Number of Training Epochs       | 10                           |
+| Learning Rate Warmup Steps      | 50                           |
+| Sequence Length Limit           | No Limit Set (default)       |
 | Optimizer                       | `AdamW` (default in Trainer) |
-| Mixed Precision Training (FP16) | Enabled (`True`)           |
-| BF16 Training                   | Disabled (`False`)         |
-| Gradient Checkpointing          | Enabled (`True`)           |
-| Output Directory                | `${model_name}/2d`         |
-| Save Strategy                   | `steps`                    |
-| Random Seed                     | 42                         |
-| Loss Function                   | `Matryoshka2dLoss`         |
-| Pooling Strategy                | `cls`                      |
-| Maximum Sequence Length         | 128                        |
-| Tokenizer Name                  | `bert-base-uncased`        |
-| Learning Rate                   | 5e-5                       |
-| Logging Steps                   | 100                        |
-| Save Steps                      | 200                        |
-| Warmup Steps                    | 50                         |
-| Workers                         | 128                        |
-| Epochs                          | 10                         |
-| IBN Weight                      | 30.0                       |
-| Cosine Weight                   | 0.0                        |
-| Apply ESE                       | Enabled (`1`)              |
-| ESE KL Temperature              | 1.0                        |
-| ESE Compression Size            | 128                        |
-| Angle Weight                    | 1.0                        |
-| Angle Tau                       | 20.0                       |
+| Mixed Precision Training (FP16) | Enabled (`True`)             |
+| BF16 Training                   | Disabled (`False`)           |
+| Gradient Checkpointing          | Enabled (`True`)             |
+| Output Directory                | `${model_name}/2d`           |
+| Save Strategy                   | `steps`                      |
+| Random Seed                     | 42                           |
+| Loss Function                   | `Matryoshka2dLoss`           |
+| Pooling Strategy                | `cls`                        |
+| Maximum Sequence Length         | 128                          |
+| Tokenizer Name                  | `bert-base-uncased`          |
+| Learning Rate                   | 5e-5                         |
+| Logging Steps                   | 100                          |
+| Save Steps                      | 200                          |
+| Warmup Steps                    | 50                           |
+| Workers                         | 128                          |
+| Epochs                          | 10                           |
+| IBN Weight                      | 30.0                         |
+| Cosine Weight                   | 0.0                          |
+| Apply ESE                       | Enabled (`1`)                |
+| ESE KL Temperature              | 1.0                          |
+| ESE Compression Size            | 128                          |
+| Angle Weight                    | 1.0                          |
+| Angle Tau                       | 20.0                         |
 
 
 
