@@ -125,7 +125,6 @@ Notes:
 | Dataset Name                    | `Tevatron/msmarco-passage` |
 | Pooling Strategy                | `cls`                      |
 | Gradient Checkpointing          | Enabled (`True`)           |
-| Save Steps                      | 10000                      |
 | Learning Rate                   | 1e-4                       |
 | Per Device Train Batch Size     | 128                        |
 | Train Group Size                | 8                          |
@@ -135,15 +134,9 @@ Notes:
 | Target Embedding Dimension      | 128                        |
 | Logging Steps                   | 10                         |
 | Overwrite Output Directory      | Enabled (`True`)           |
-| Reporting Tool                  | `wandb`                    |
-| GPU Used                        | `h100`                     |
 | Nodes                           | 1                          |
 | CPUs Per Task                   | 10                         |
 | Memory Per CPU                  | 100G                       |
-| Job Name                        | `TREC_RAG`                 |
-| GPU Partition                   | `gpu_cuda`                 |
-| Account                         | `a_ielab`                  |
-| Time Limit                      | `100:00:00`                |
 | Score Alignment                 | Passed as Argument         |
 | Compare to Last Layer           | Passed as Argument         |
 | Passage to Last Layer           | Passed as Argument         |
