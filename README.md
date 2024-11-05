@@ -12,7 +12,7 @@ For the reproduction [Retrieval Task](code/Retrieval/README.md), please refer to
 
 -----
 
-## For STS (Semantic Textual Similarity) Reproduction
+## Additional Info for STS (Semantic Textual Similarity)
 
 
 ### Training Hyperparameters for STS Reproduction
@@ -117,7 +117,7 @@ Notes:
 -----
 
 
-## For Retrieval Task:
+## Additional Info for Retrieval Task:
 
 ### Training Hyperparameters
 
