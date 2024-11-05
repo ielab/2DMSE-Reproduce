@@ -1,0 +1,4 @@
+sbatch_jobs_arvin.sh
+.idea/
+__pycache__/
+*.egg-info/
